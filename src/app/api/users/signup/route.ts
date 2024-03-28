@@ -3,6 +3,7 @@ import User from "@/models/userModel";
 import {NextRequest, NextResponse} from "next/server";
 import bcryptjs from "bcryptjs";
 import {toast} from "react-hot-toast";
+import { sendEmail } from "@/helpers/mailer";
 
 connect()
 
@@ -22,8 +23,7 @@ export async function POST(request:NextRequest) {
 
         //Hash password
         const salt = await bcryptjs.genSalt(10)
-        const hashedPassword = await bcryptjs.hash
-        (password, salt)
+        const hashedPassword = await bcryptjs.hash(password, salt)
 
         const newUser = new User({
             username,
@@ -33,6 +33,9 @@ export async function POST(request:NextRequest) {
 
         const savedUser = await newUser.save()
         console.log(savedUser);
+
+        //send verification email
+        await sendEmail({email, emailType:"VERIFY", userId:savedUser._id})
 
         return NextResponse.json({
             message: "User created successfully",
