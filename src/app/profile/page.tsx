@@ -26,27 +26,36 @@ export default function ProfilePage() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1>Profile</h1>
-            <hr/>
-            <p>Profile Page</p>
-            <h2 className="p-1 rounded bg-green-500">
-                {data==='nothing'? "Nothing": <Link href={`/profile/${data}`}>{data}</Link>}
-            </h2>
-            <hr/>
-            <button
-            onClick={logout}
-            className="bg-blue-500 mt-4 hover:bg-blue-700 text-white 
-            font-bold py-2 px-4 rounded">
-                Logout
-            </button>
+        <div className="flex items-center justify-center min-h-screen bg-gray-300">
+            <div className="relative flex flex-col m-6 space-y-8 
+            bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
+                <div className="flex flex-col justify-center p-8 md:p-14">
+                    <div className="text-black font-bold font-dark">Welcome to the Profile Page</div>
+                    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+                        <h1>Profile</h1>
+                        <hr/>
+                        <p>Profile Page</p>
+                        <h2 className="p-1 rounded bg-gray-500 font-bold">
+                            {data==='nothing'? "Under development": <Link href={`/profile/${data}`}>{data}</Link>}
+                        </h2>
+                        <hr/>
+                        <button
+                        onClick={logout}
+                        className="bg-blue-500 mt-4 hover:bg-blue-700 text-white 
+                        font-bold py-2 px-4 rounded">
+                            Logout
+                        </button>
 
-            <button
-            onClick={getUserDetails}
-            className="bg-green-700 mt-4 hover:bg-blue-700 text-white 
-            font-bold py-2 px-4 rounded">
-                Get User Details
-            </button>
+                        <button
+                        onClick={getUserDetails}
+                        className="bg-green-700 mt-4 hover:bg-blue-700 text-white 
+                        font-bold py-2 px-4 rounded">
+                            Get User Details
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     )
 }
