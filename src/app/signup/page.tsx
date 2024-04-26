@@ -107,7 +107,7 @@ export default function SignupPage() {
                 </div>
                 <div className="relative">
                     <div className="w-[400px] h-full hidden rounded-r-2xl md:block">
-                        <Image src="/image.jpg" alt="image" layout="fill" objectFit="cover" />
+                        <Image src="/image1.jpg" alt="image" layout="fill" objectFit="cover" />
                     </div>
                     
                     <div className="absolute hidden bottom-10 right-6 
