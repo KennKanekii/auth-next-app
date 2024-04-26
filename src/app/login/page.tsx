@@ -96,7 +96,7 @@ export default function LoginPage() {
                     </button>
                     <button className="text-black w-full border 
                     border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white">
-                        <Image src="google.svg" alt="img" height={24} width={24} className="inline mr-2" />
+                        <Image src="/google.svg" alt="img" height={24} width={24} className="inline mr-2" />
                         Sign in with Google
                     </button>
                     <div className="bg-gray-300 border rounded-md py-2 px-2 w-full-border 
@@ -111,7 +111,7 @@ export default function LoginPage() {
                     
                     <div className="absolute hidden bottom-10 right-6 
                     p-6 bg-white bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg md:block">
-                        <span className="text-white text-xl">Welcome to Token based user  
+                        <span className="text-black text-xl">Welcome to Token based user  
                         verification and authentication</span>
                     </div>
                 </div>
